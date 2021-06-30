@@ -37,28 +37,28 @@
                 <div class="card-body border">
                     <form method="POST" action="">
                         <div class="row">
-                            <div class="col-mb-8 offset-md-2 col-xl-12">
+                            <div class="col-mb-8 offset-md-2 ">
                                 <label>Usuário</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-mb-8 offset-md-2 col-xl-12">
+                            <div class="col-mb-8 offset-md-2">
                                 <input class="text" name="login"></input>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-mb-8 offset-md-2 col-xl-12">
+                            <div class="col-mb-8 offset-md-2">
                                 <label>Senha</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-mb-8 offset-md-2 col-xl-12">
+                            <div class="col-mb-8 offset-md-2 ">
                                 <input class="text" name="senha"></input>
                             </div>
                         </div>
 
                         <div class="row" style="margin-top: 15px;">
-                            <div class="col-mb-8 offset-md-2 col-xl-12">
+                            <div class="col-mb-8 offset-md-2 ">
                                 <input class="btn btn-success" type="submit" name="enviar" value="Enviar"></input>
                                 <input class="btn btn-light" type="reset" name="enviar" value="Cancelar"></input>
                             </div>
