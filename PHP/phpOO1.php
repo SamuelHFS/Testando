@@ -13,7 +13,7 @@
     echo "Dados do Produto: <br> ";
     echo "Código: " . $p->getId() . "<br>";
     echo "Produto: " . $p->getNome() . "<br>";
-    echo "Valor de compra: " . $p->getvlrCompra() . "<br>";
+    echo "Valor de comprinha: " . $p->getvlrCompra() . "<br>";
     echo "Valor de vENDInhA: " . $p->getvlrVenda() . "<br>";
     echo "Quantidade de Estoque: " . $p->getEstoque() . "<br>";
 
