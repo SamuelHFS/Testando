@@ -50,8 +50,7 @@
             }
 
             .teste{
-               margin-top: -5.6%;
-               margin-left: 50%;
+              background-color: gray;
                
             }
 
@@ -116,18 +115,20 @@
 
     
         <main>
+        
             <div class="container">
-            <div class="py-5 text-center border danger">
+            <div class="teste"><div class="py-5 text-center border border-secondary">
                 <h2>Faça Seu Cadastro</h2>
             </div>
-
-            <div class="row offset">
+        </div>
+        
+            <div class="row">
 
                 <div class="col-md-7 col-lg-8 ">
                     <h4 class="mb-3">Informações</h4>
                     <form class="needs-validation" novalidate>
 
-                        <div class="row g-3">
+                        <div class="row g-6">
                             <div class="col-md-1">
                                 <label for="code" class="form-label">Código</label>
                                 <input type="text" class="form-control" id="codigo" name="codigo" placeholder="" value="" required>
@@ -183,7 +184,7 @@
 
                             
 
-                            <div class="col-md-5">
+                            <div class="col-md-6 ">
                                 <label for="state" class="form-label" name="perfil">Perfil</label>
                                 <select class="form-select" id="state" required>
                                     <option value="">Cliente</option>
@@ -195,7 +196,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4 ">
                                 <label for="email" class="form-label">E-mail 
                                 <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
                                 <div class="invalid-feedback">
@@ -205,7 +206,7 @@
 
 
 
-                            <div class="col-md-6">
+                            <div class="col-md-2 ">
                                 <label for="zip" class="form-label" name="cpf">CPF</label>
                                 <input type="text" class="form-control" id="zip" placeholder="" required>
                                 <div class="invalid-feedback">
@@ -215,16 +216,13 @@
 
                             
                         </div>
-                        <hr class="my-4">
+                        <hr style="width:150%" class="my-6   ">
 
                        
-                            <div class="col-md-4 offset-12">
-                        <button class="w-100 btn btn-success btn-lg btInput" name="cadastrar" type="submit">Confirmar</button>
-</div>
-                         <div class="teste">
-                            <div class="col-md-8 offset-1">
-                        <button class="w-100 btn btn-danger btn-lg " name="excluir" type="submit">Excluir</button>
-        </div></div>
+                        <div class="col-md-4 offset-md-5">
+                            <input type="submit" name="cadastrar" class="btn btn-outline-primary" value="Enviar">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="Reset" name="Cancelar" class="btn btn-outline-danger" value="Limpar">
+                        </div>
                     </form>
                 </div>
             </div>
