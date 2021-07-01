@@ -14,7 +14,7 @@
     echo "Código: " . $p->getId() . "<br>";
     echo "Produto: " . $p->getNome() . "<br>";
     echo "Valor de compra: " . $p->getvlrCompra() . "<br>";
-    echo "Valor de venda: " . $p->getvlrVenda() . "<br>";
+    echo "Valor de vENDIA: " . $p->getvlrVenda() . "<br>";
     echo "Quantidade de Estoque: " . $p->getEstoque() . "<br>";
 
     $id = $p->getId();
