@@ -8,7 +8,7 @@
 </head>
 <body>
  <h3> Eleições para síndico </h3>   
- <label> Selecione o seu candidato</label>
+ <label> Selecione o seu candidato enao foi</label>
  <?php
  if(!isset($_COOKIE["c1"])) {
      setcookie("c1", 0);
