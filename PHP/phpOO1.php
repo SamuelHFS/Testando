@@ -9,7 +9,7 @@
     $p->setvlrVenda(15);
     $p->setEstoque(50);
 
-
+  
     echo "Dados do Produto: <br> ";
     echo "Código: " . $p->getId() . "<br>";
     echo "Produto: " . $p->getNome() . "<br>";
