@@ -1,208 +1,123 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Pagamento</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
-
-
-
-    <!-- Bootstrap core CSS -->
-
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-        <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-        <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-        <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-        <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-        <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-        <meta name="theme-color" content="#7952b3">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-            }
-
             .btInput{
-                padding-left: 35%;
-                padding-right: 40%;
-                margin-left: 50%;
-               
-               
+                padding: 10px 20px 10px 20px;
+                margin-top: 20px;
+                margin-bottom: 20px;
             }
-
-            .teste{
-              background-color: gray;
-               
-            }
-
-            .btInput2{
-                
-                padding: 0.3875em 1em 0.1275em;
-    			display: inline-block;
-    			padding: 10px 20px;
-    			margin-bottom: 0;
-                
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-
-            
         </style>
-
-
-        <!-- Custom styles for this template -->
-        <link href="css/formulario.css" rel="stylesheet">
-</head>
-
-<body class="bg-light">
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark
-            bg-dark m5">
-           
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Cadastro Cliente</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="login.html">Login</a>
-            </li>
-            
-              <a class="nav-link" href="#">Vantagens</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">Teste</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#">Contato</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-   </header>
-
-    
-        <main>
-        
-            <div class="container">
-            <div class="teste"><div class="py-5 text-center border border-secondary">
-                <h2>Faça Seu Cadastro</h2>
-            </div>
-        </div>
-        
-            <div class="row">
-
-                <div class="col-md-7 col-lg-8 ">
-                    <h4 class="mb-3">Informações</h4>
-                    <form class="needs-validation" novalidate>
-
-                        <div class="row g-6">
-                            <div class="col-md-1">
-                                <label for="code" class="form-label">Código</label>
-                                <input type="text" class="form-control" id="codigo" name="codigo" placeholder="" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
-                            </div>
-
-                            
-                            <div class="col-md-5">
-                                <label for="firstName" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="" required>
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
-                            </div>
-
-                            <div class="col-md-6"> 
-                    <label for="data_nascimento" class="form-label">Data de Nascimento:</label>
-                    <input type="date" class="form-control" name="nascimento" id="nascimento" required>
-          
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </nav>
 
-                
+        <div class="container-fluid">
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-8 offset-2">
 
-                            <div class="col-12">
-                                <label for="username" class="form-label">Login</label>
-                                <div class="input-group has-validation">
-                                    <span class="input-group-text">@</span>
-                                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="you@example.com"
-                                        required>
-                                    <div class="invalid-feedback">
-                                        Your username is required.
-                                    </div>
+                    <div class="card-header bg-light text-center border"
+                         style="padding-bottom: 15px; padding-top: 15px;">
+                        Cadastro de Cliente
+                    </div>
+                    <?php
+                    //envio dos dados para o BD
+                    if (isset($_POST['cadastrar'])) {
+                        include_once 'controller/PessoaController.php';
+                        
+
+                        $nome = $_POST['nome'];
+                        $dtNasc = $_POST['dtNasc'];
+                        $login = $_POST['login'];
+                        $senha = $_POST['senha'];
+                        $perfil = $_POST['perfil'];
+                        $cpf = $_POST['cpf'];
+                        $email = $_POST['email'];
+
+                        $pc = new PessoaController();
+                        echo "<p>".$pc->inserirPessoa($nome, $dtNasc, 
+                            $login, $senha, $perfil, $email, $cpf)."</p>";
+                    }
+                    ?>
+                    <div class="card-body border">
+                        <form method="post" action="">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Código: </label> <br> 
+                                    <label>Nome Completo</label>  
+                                    <input class="form-control" type="text" 
+                                           name="nome">
+                                    <label>Data de Nascimento</label>  
+                                    <input class="form-control" type="date" 
+                                           name="dtNasc">  
+                                    <label>E-Mail</label>  
+                                    <input class="form-control" type="email" 
+                                           name="email"> 
+                                    <label>CPF</label>  
+                                    <input class="form-control" type="text" 
+                                           name="cpf">
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <label>Login</label>  
+                                    <input class="form-control" type="text" 
+                                           name="login">  
+                                    <label>Senha</label>  
+                                    <input class="form-control" type="password" 
+                                           name="senha"> 
+                                    <label>Conf. Senha</label>  
+                                    <input class="form-control" type="password" 
+                                           name="senha2"> 
+                                    <label>Perfil</label>  
+                                    <select name="perfil" class="form-control">
+                                        <option>[--Selecione--]</option>
+                                        <option>Cliente</option>
+                                        <option>Funcionário</option>
+                                    </select>
                                 </div>
                             </div>
-                    
-                            <div class="col-md-3">
-                                <label for="email" class="form-label">Senha
-                                <input type="email" class="form-control" id="senha" name="senha" placeholder>
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
+                            <div class="col-6 offset-4">
+                                <input type="submit" name="cadastrar"
+                                       class="btn btn-success btInput" value="Enviar">
+                                &nbsp;&nbsp;
+                                <input type="reset" 
+                                       class="btn btn-light btInput" value="Limpar">
                             </div>
-
-                            <div class="col-md-4">
-                                <label for="email" class="form-label">Confirmar Senha
-                                <input type="email" class="form-control" id="senha2" name="senha2" placeholder>
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
-                            </div>
-
-                            
-
-                            <div class="col-md-6 ">
-                                <label for="state" class="form-label" name="perfil">Perfil</label>
-                                <select class="form-select" id="state" required>
-                                    <option value="">Cliente</option>
-                                    <option>Funcionário</option>
-
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please provide a valid state.
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 ">
-                                <label for="email" class="form-label">E-mail 
-                                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
-                            </div>
+<<<<<<< HEAD
 
 
 
@@ -274,5 +189,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>
-
+=======
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>
+>>>>>>> be294fadcd332bf5b4247f6537fde1c4a15fb59f
+
