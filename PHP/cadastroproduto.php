@@ -52,70 +52,50 @@
 
                     <div class="card-header bg-light text-center border"
                          style="padding-bottom: 15px; padding-top: 15px;">
-                        Cadastro de Cliente
+                        Cadastro de Produto
                     </div>
                     <?php
                     //envio dos dados para o BD
-                    if (isset($_POST['cadastrar'])) {
-                        include_once 'controller/PessoaController.php';
+                    if (isset($_POST['cadastrarProduto'])) {
+                        include_once 'controller/ProdutoController.php';
                         
 
-                        $nome = $_POST['nome'];
-                        $dtNasc = $_POST['dtNasc'];
-                        $login = $_POST['login'];
-                        $senha = $_POST['senha'];
-                        $perfil = $_POST['perfil'];
-                        $email = $_POST['email'];
-                        $cpf = $_POST['cpf'];
-
-                        $pc = new PessoaController();
-                        echo "<p>".$pc->inserirPessoa($nome, $dtNasc, 
-                            $login, $senha, $perfil, $email, $cpf)."</p>";
+                        $nome = $_POST['nomeProduto'];
+                        $vlrCompra = $_POST['vlrCompra'];
+                        $vlrVenda = $_POST['vlrVenda'];
+                        $qtdEstoque = $_POST['qtdEstoque'];
+                        
+                        $pc = new ProdutoController();
+                        echo "<p>".$pc->inserirProduto($nome, $vlrCompra, 
+                            $vlrVenda, $qtdEstoque)."</p>";
                     }
                     ?>
                     <div class="card-body border">
                         <form method="post" action="">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 offset-md-3">
                                     <label>Código: </label> <br> 
-                                    <label>Nome Completo</label>  
+                                    <label>Nome Prodto</label>  
                                     <input class="form-control" type="text" 
-                                           name="nome">
-                                    <label>Data de Nascimento</label>  
-                                    <input class="form-control" type="date" 
-                                           name="dtNasc">  
-                                    <label>E-Mail</label>  
-                                    <input class="form-control" type="email" 
-                                           name="email"> 
-                                    <label>CPF</label>  
+                                           name="nomeProduto">
+                                    <label>Valor de Compra</label>  
                                     <input class="form-control" type="text" 
-                                           name="cpf">
-                                </div>
-                                <div class="col-md-6">
-                                    <br>
-                                    <label>Login</label>  
+                                           name="vlrCompra">  
+                                    <label>Valor de Venda</label>  
                                     <input class="form-control" type="text" 
-                                           name="login">  
-                                    <label>Senha</label>  
-                                    <input class="form-control" type="password" 
-                                           name="senha"> 
-                                    <label>Conf. Senha</label>  
-                                    <input class="form-control" type="password" 
-                                           name="senha2"> 
-                                    <label>Perfil</label>  
-                                    <select name="perfil" class="form-control">
-                                        <option>[--Selecione--]</option>
-                                        <option>Cliente</option>
-                                        <option>Funcionário</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-6 offset-4">
-                                <input type="submit" name="cadastrar"
+                                           name="vlrVenda"> 
+                                    <label>Quantidade Estoque</label>  
+                                    <input class="form-control" type="number" 
+                                           name="qtdEstoque">
+                                           
+                                
+                                <input type="submit" name="cadastrarProduto"
                                        class="btn btn-success btInput" value="Enviar">
                                 &nbsp;&nbsp;
                                 <input type="reset" 
-                                       class="btn btn-light btInput" value="Limpar">
+                                       class="btn btn-danger btInput" value="Limpar">
+                               
+                           
                             </div>
                         </form>
                     </div>
@@ -126,4 +106,4 @@
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
-
+''

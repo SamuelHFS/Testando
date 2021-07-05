@@ -1,5 +1,11 @@
 <?php
-include_once '../dao/daopessoa.php.php';
+require_once "C:/xampp/htdocs/ProAcademia/PHP/dao/daopessoa.php";
+require_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Pessoa.php';
+
+
+
+
+
 
 class PessoaController{
     public function inserirPessoa($nome, $dtNasc, $login, $senha, $perfil, $email, $cpf ){
@@ -12,7 +18,9 @@ class PessoaController{
         $pessoa->setEmail($email);
         $pessoa->setCpf($cpf);
 
-        $daoPessoa = new daopessoa();
-        $daoPessoa->inserir($pessoa);
+
+        
+        $daoPessoa = new daoPessoa();
+         return $daoPessoa->inserir($pessoa);
     }
 }

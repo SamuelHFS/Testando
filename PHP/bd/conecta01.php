@@ -6,7 +6,7 @@ class Conecta{
     private  $user = "root";
     private  $password = "senac";
     private  $base = "produto1";
-    public $db;
+    
     
 
     public function conectadb(){
