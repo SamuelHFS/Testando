@@ -219,7 +219,7 @@
                         <hr style="width:150%" class="my-6   ">
 
                        
-                        <div class="col-md-4 offset-md-5">
+                        <div class="col-md-6 offset-md-5">
                             <input type="submit" name="cadastrar" class="btn btn-outline-primary" value="Enviar">&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="Reset" name="Cancelar" class="btn btn-outline-danger" value="Limpar">
                         </div>
@@ -230,7 +230,7 @@
         </main>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">&copy; 2017–2021 Academia Firme&Forte</p>
+            <p class="mb-1">&copy; 2017–2021 Cadastro Pessoa</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Privacidade</a></li>
                 <li class="list-inline-item"><a href="#">Termos</a></li>

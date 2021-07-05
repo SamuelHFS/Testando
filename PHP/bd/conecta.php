@@ -2,10 +2,10 @@
 
 class Conecta{
 
-    private static $url = "localhost:3306";
-    private static $user = "root";
-    private static $password = "senac";
-    private static $base = "";
+    private  $url = "localhost:3306";
+    private  $user = "root";
+    private  $password = "senac";
+    private  $base = "";
     public $db;
 
     public function __construct()
