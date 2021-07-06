@@ -1,7 +1,9 @@
 <?php
-require_once "C:/xampp/htdocs/ProAcademia/PHP/dao/daopessoa.php";
-require_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Pessoa.php';
+#require_once "C:/xampp/htdocs/ProAcademia/PHP/dao/daopessoa.php";
+#require_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Pessoa.php';
 
+require_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daopessoa.php';
+require_once 'C:/xampp/htdocs/PAcademia/PHP/model/Pessoa.php';
 
 
 

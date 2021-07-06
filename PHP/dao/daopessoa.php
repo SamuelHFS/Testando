@@ -1,6 +1,9 @@
 <?php
-require_once 'C:/xampp/htdocs/ProAcademia/PHP/bd/conecta.php';
-require_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Pessoa.php';
+#require_once 'C:/xampp/htdocs/ProAcademia/PHP/bd/conecta.php';
+#require_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Pessoa.php';
+
+require_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conecta.php'; #casa
+require_once 'C:/xampp/htdocs/PAcademia/PHP/model/Pessoa.php'; #casa
 
 
 
