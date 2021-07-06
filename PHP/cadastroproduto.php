@@ -1,3 +1,7 @@
+<?php
+ include_once 'controller/ProdutoController.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,7 +61,7 @@
                     <?php
                     //envio dos dados para o BD
                     if (isset($_POST['cadastrarProduto'])) {
-                        include_once 'controller/ProdutoController.php';
+                       
                         
 
                         $nome = $_POST['nomeProduto'];
@@ -97,7 +101,44 @@
                                
                            
                             </div>
+                            
                         </form>
+
+                <div class="row" style="margin-top: 30px;">
+                    <table class="table table-striped table-responsive">
+                        <thead class="table-dark">
+                         <tr><th>Código</th>
+                        <th>Nome</th>
+                        <th>Compra (R$)</th>
+                        <th>Venda (R$)</th>
+                        <th>Estoque</th></tr>
+
+                        </thead>
+                         <tbody>
+                        <?php
+                           $pcTable = new produtoController();
+                           $listaProdutos = $pcTable->listarProdutos();
+                           $lista
+                           foreach($listaProdutos as $lp){
+                           ?>  
+                               <td><?php print_r($lp->getIdproduto());?></td>
+                               <td><?php print_r($lp->getNomeProduto());?></td>
+                               <td><?php print_r($lp->getValorCompra());?></td>
+                               <td><?php print_r($lp->getValorVenda());?></td>
+                               <td><?php print_r($lp->getQtdEstoque());?></td>
+                               <td></td>
+                                   
+                               }
+                               <?php
+                       ?>
+
+
+                           
+                              
+                        </tbody>
+
+                    </table>
+                </div>
                     </div>
                 </div>
             </div>
@@ -106,4 +147,3 @@
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
-''

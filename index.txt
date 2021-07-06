@@ -87,3 +87,27 @@ switch($idade){
     case ($idade > 18): echo "Maior de Idade"; break;
     default: echo "Está no limbo";
   }
+
+
+  1	idpessoaPrimária	int(11)			Não	None		AUTO_INCREMENT	Muda Muda	Elimina Elimina	
+Mais Mais
+	2	nome	varchar(255)	utf8_general_ci		Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+	3	dtNasc	date			Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+	4	login	varchar(65)	utf8_general_ci		Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+	5	senha	varchar(64)	utf8_general_ci		Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+	6	perfil	varchar(20)	utf8_general_ci		Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+	7	email	varchar(255)	utf8_general_ci		Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+	8	cpf	varchar(14)	utf8_general_ci		Não	None			Muda Muda	Elimina Elimina	
+Mais Mais
+Primária Primária
+Único Único
+Índice Índice
+Spatial Spatial
+Texto Completo Texto Completo
+Distinct values Distinct values

@@ -1,10 +1,10 @@
 <?php
 
-include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php';
-include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
 
-#include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conecta01.php';
-#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Produto.php';
+include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 

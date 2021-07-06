@@ -1,10 +1,10 @@
 <?php
 
-include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conecta01.php';
-include_once 'C:/xampp/htdocs/PAcademia/PHP/model/produto.php';
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conecta.php'; #casa
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/Produto.php'; #casa
 
-#include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conecta01.php';
-#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Produto.php';
+include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conecta.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Produto.php';
 
 
 
@@ -34,5 +34,19 @@ class DaoProduto{
         mysqli_close($conn->conectadb());
         return $msg;
     }
+
+    //método para carregar lista de produtos do banco de dados do banco de dados 
+
+    public function listarProdutosDAO(){
+        $conn = new Conecta();
+
+        if($conn->conectadb()){
+            $sql = "select * from produto";
+            $query = mysqli_query($conn->conectadb(), $sql);
+            $lista = mysqli_fetch_array($query);
+            return $lista;
+        }
+    }
+
 }
 

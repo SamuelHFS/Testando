@@ -2,18 +2,13 @@
 
 class Conecta{
 
-<<<<<<< HEAD
-    private  $url = "localhost:3306";
-    private  $user = "root";
-    private  $password = "senac";
-    private  $base = "";
-=======
+
+
     private $url = "localhost:3306";
     private  $user = "root";
-    private  $password = "senac";
+    private  $password = "senac"; #mudarSenha12345
     private  $base = "produto1";
->>>>>>> be294fadcd332bf5b4247f6537fde1c4a15fb59f
-    public $db;
+
     
 
     public function conectadb(){

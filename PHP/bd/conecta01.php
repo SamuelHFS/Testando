@@ -4,7 +4,7 @@ class Conecta{
 
     private $url = "localhost:3306";
     private  $user = "root";
-    private  $password = "12345";
+    private  $password = "senac"; #mudarSenha12345
     private  $base = "dbphp";
     
     
