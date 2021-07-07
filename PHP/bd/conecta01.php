@@ -1,10 +1,10 @@
 <?php
 
 class Conecta{
-
+#bd do cadastra produto
     private $url = "localhost:3306";
     private  $user = "root";
-    private  $password = "senac"; #mudarSenha12345
+    private  $password = "12345"; #mudarSenha12345
     private  $base = "dbphp";
     
     

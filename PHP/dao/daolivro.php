@@ -1,10 +1,10 @@
 <?php
 
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
 
-include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+#include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 
@@ -47,6 +47,7 @@ class DaoLivro{
             $result = mysqli_fetch_array($query);
             $lista = array();
             $a = 0;
+            if ($result) {
             do{
                 $livro = new Livro();
                 $livro->setId($result['id']);
@@ -57,8 +58,12 @@ class DaoLivro{
                 $lista[$a] = $livro;
                 $a++;
             }while($result = mysqli_fetch_array($query));
+        }
             mysqli_close($conn->conectadb());
             return $lista;
         }
     }
 }
+
+
+  

@@ -1,6 +1,7 @@
 <?php
- include_once 'controller/ProdutoController.php';
-?>
+ include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/ProdutoController.php';
+ ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -58,20 +59,22 @@
                          style="padding-bottom: 15px; padding-top: 15px;">
                         Cadastro de Produto
                     </div>
+                    
                     <?php
                     //envio dos dados para o BD
                     if (isset($_POST['cadastrarProduto'])) {
-                       
-                        
+                        $nome = trim($_POST['nomeProduto']);
+                        if ($nome != "") {
+                            $vlrCompra = $_POST['vlrCompra'];
+                            $vlrVenda = $_POST['vlrVenda'];
+                            $qtdEstoque = $_POST['qtdEstoque'];
 
-                        $nome = $_POST['nomeProduto'];
-                        $vlrCompra = $_POST['vlrCompra'];
-                        $vlrVenda = $_POST['vlrVenda'];
-                        $qtdEstoque = $_POST['qtdEstoque'];
-                        
-                        $pc = new ProdutoController();
-                        echo "<p>".$pc->inserirProduto($nome, $vlrCompra, 
-                            $vlrVenda, $qtdEstoque)."</p>";
+                            $pc = new ProdutoController();
+                            unset($_POST['cadastrarProduto']);
+                            echo $pc->inserirProduto($nome, $vlrCompra, $vlrVenda, $qtdEstoque);
+                            echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"2;
+                                URL='cadastroProduto.php'\">";
+                        }
                     }
                     ?>
                     <div class="card-body border">
@@ -104,40 +107,64 @@
                             
                         </form>
 
-                <div class="row" style="margin-top: 30px;">
-                    <table class="table table-striped table-responsive">
-                        <thead class="table-dark">
-                         <tr><th>Código</th>
+                        <div class="row" style="margin-top: 30px;">
+            <table class="table table-striped table-responsive">
+                <thead class="table-dark">
+                    <tr><th>Código</th>
                         <th>Nome</th>
                         <th>Compra (R$)</th>
                         <th>Venda (R$)</th>
-                        <th>Estoque</th></tr>
-
-                        </thead>
-                         <tbody>
+                        <th>Estoque</th>
+                        <th>Ações</th></tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $pcTable = new ProdutoController();
+                    $listaProdutos = $pcTable->listarProdutos();
+                    $a = 0;
+                    if ($listaProdutos != null) {
+                        foreach ($listaProdutos as $lp) {
+                            $a++;
+                            ?>
+                            <tr>
+                                <td><?php print_r($lp->getId()); ?></td>
+                                <td><?php print_r($lp->getNome()); ?></td>
+                                <td><?php print_r($lp->getVlrCompra()); ?></td>
+                                <td><?php print_r($lp->getVlrVenda()); ?></td>
+                                <td><?php print_r($lp->getEstoque()); ?></td>
+                                <td><a class="btn btn-light" 
+                                       href="#?id=<?php echo $lp->getId(); ?>">
+                                        <img src="img/edita.png" width="32"></a>
+                                    <button type="button" 
+                                            class="btn btn-light" data-bs-toggle="modal" 
+                                            data-bs-target="#exampleModal<?php echo $a;?>">
+                                        <img src="img/delete.png" width="32"></button></td>
+                            </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal<?php echo $a;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Contexto....<?php echo $lp->getId(); ?>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Sim</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         <?php
-                           $pcTable = new produtoController();
-                           $listaProdutos = $pcTable->listarProdutos();
-                           $lista
-                           foreach($listaProdutos as $lp){
-                           ?>  
-                               <td><?php print_r($lp->getIdproduto());?></td>
-                               <td><?php print_r($lp->getNomeProduto());?></td>
-                               <td><?php print_r($lp->getValorCompra());?></td>
-                               <td><?php print_r($lp->getValorVenda());?></td>
-                               <td><?php print_r($lp->getQtdEstoque());?></td>
-                               <td></td>
-                                   
-                               }
-                               <?php
-                       ?>
-
-
-                           
-                              
-                        </tbody>
-
-                    </table>
+                    }
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>     
                 </div>
                     </div>
                 </div>
@@ -145,5 +172,13 @@
         </div>
         <script src="js/bootstrap.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script>
+            var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function () {
+                myInput.focus()
+            })
+    </script> 
     </body>
 </html>

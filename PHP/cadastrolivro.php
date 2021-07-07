@@ -1,5 +1,6 @@
 <?php
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php';
 ?>
 
 <!DOCTYPE html>
@@ -63,22 +64,26 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
                 //envio dos dados para o BD
                 if (isset($_POST['cadastrarLivro'])) {
                     
-
-
-                    $titulo = $_POST['titulo'];
+                    $titulo = ($_POST['titulo']);
+                        if($titulo !=""){
                     $autor = $_POST['autor'];
                     $editora = $_POST['editora'];
                     $qtdEstoque = $_POST['qtdEstoque'];
 
                     $pc = new LivroController();
+                    unset($_POST['cadastrarLivro']);
                     echo "<p>" . $pc->inserirLivro(
                         $titulo,
                         $autor,
                         $editora,
                         $qtdEstoque
                     ) . "</p>";
+                    echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"2;
+                                URL='cadastroLivro.php'\">";
                 }
+            }
                 ?>
+
 
 
 
@@ -121,8 +126,10 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
                     <?php
                     $pcTable = new LivroController();
                     $listaLivros = $pcTable->listarLivros();
-
+                    $a = 0;
+                    if ($listaLivros!= null) {
                     foreach ($listaLivros as $li) {
+                        $a++;
                     ?>
                         <tr>
                             <td><?php print_r($li->getId()); ?></td>
@@ -137,10 +144,9 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
 
                     <?php
                     }
+                }
 
                     ?>
-
-
 
 
                 </tbody>
@@ -155,6 +161,14 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
     </div>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+            var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function () {
+                myInput.focus()
+            })
+    </script> 
 </body>
 
 </html>
