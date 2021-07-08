@@ -1,7 +1,12 @@
 <?php
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php'; #casa
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
+$pr = new Livro();
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -63,8 +68,8 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
                 <?php
                 //envio dos dados para o BD
                 if (isset($_POST['cadastrarLivro'])) {
-                    
-                    $titulo = ($_POST['titulo']);
+                   
+                    $titulo = trim($_POST['titulo']);
                         if($titulo !=""){
                     $autor = $_POST['autor'];
                     $editora = $_POST['editora'];
@@ -79,13 +84,26 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
                         $qtdEstoque
                     ) . "</p>";
                     echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"2;
-                                URL='cadastroLivro.php'\">";
+                                URL='cadastrolivro.php'\">";
                 }
             }
+
+            if(isset($_POST['limpar'])){
+                $lc2 = new LivroController();
+                $pr = $lc2->limpar();
+                unset($_POST['limpar']);
+                $_GET = null;
+                echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
+                URL='cadastrolivro.php'\">";
+            }
+            if (isset($_GET)){
+                $id = $_REQUEST['id'];
+                $lc = new LivroController();
+                $pr = $lc->pesquisarLivroId($id);
+            }
+
+                
                 ?>
-
-
-
 
                 <div class="card-body border">
                     <form method="post" action="">
@@ -93,18 +111,18 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
                             <div class="col-md-6 offset-md-3">
                                 <label>Código: </label> <br>
                                 <label>Título: </label>
-                                <input class="form-control" type="text" name="titulo" value="<?php echo $li->getId(); ?>">
+                                <input class="form-control" type="text" name="titulo" value="<?php echo $pr->getTitulo();?>">
                                 <label>Autor</label>
-                                <input class="form-control" type="text" name="autor">
+                                <input class="form-control" type="text" name="autor" value="<?php echo $pr->getAutor();?>">
                                 <label>Editora</label>
-                                <input class="form-control" type="text" name="editora">
+                                <input class="form-control" type="text" name="editora" value="<?php echo $pr->getEditora();?>">
                                 <label>Quantidade Estoque</label>
-                                <input class="form-control" type="number" name="qtdEstoque">
+                                <input class="form-control" type="number" name="qtdEstoque" value="<?php echo $pr->getQtdEstoque();?>">
 
-                                <!--Mudar o NAME do BOTÃO-->
+                                <!--Mudar o NAME do BOTÃO por conta do cache do navegador-->
                                 <input type="submit" name="cadastrarLivro" class="btn btn-success btInput" value="Enviar">
                                 &nbsp;&nbsp;
-                                <input type="submit" class="btn btn-danger btInput" value="Limpar">
+                                <input type="submit" class="btn btn-danger btInput" name="limpar" value="Limpar">
 
 
                             </div>
@@ -137,8 +155,8 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
                                 <td><?php print_r($li->getQtdEstoque()); ?></td>
                                 
                                 <td><a class="btn btn-light" 
-                                       href="controller/editaLivro.php?id=<?php echo $li->getId(); ?>">
-                                        Excluir</a>
+                                       href="cadastrolivro.php?id=<?php echo $li->getId(); ?>">
+                                        Editar</a>
                                     <button type="button" 
                                             class="btn btn-light" data-bs-toggle="modal" 
                                             data-bs-target="#exampleModal<?php echo $a;?>">

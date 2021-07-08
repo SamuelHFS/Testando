@@ -1,8 +1,8 @@
 <?php
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daolivro.php'; #casa
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
-include_once  'C:/xampp/htdocs/ProAcademia/PHP/dao/daolivro.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daolivro.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
+#include_once  'C:/xampp/htdocs/ProAcademia/PHP/dao/daolivro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 class LivroController{
@@ -30,7 +30,7 @@ class LivroController{
     }
 
     //metodo para retornar livro com os dados do banco de dados
-    public function pesquisarLivroIdDAO($id){
+    public function pesquisarLivroId($id){
         $daoLivro = new daolivro();
         return $daoLivro->pesquisarLivroIdDAO($id);
     }
@@ -42,7 +42,10 @@ class LivroController{
        return  $daoLivro->editarLivroDAO($id);
     }
 
-//metodo
+//método para limpar formulário
+public function limpar(){
+    return $pr = new Livro();
+}
 
 }
 

@@ -1,10 +1,10 @@
 <?php
 
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
 
-include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+#include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 
@@ -38,7 +38,7 @@ class DaoLivro{
         mysqli_close($conn->conectadb());
         return $msg;
     }
-
+//método para carregar lista de livros do banco de dados
     public function listarLivrosDAO(){
         $conn = new Conecta();
         if ($conn->conectadb()) {
@@ -76,20 +76,20 @@ class DaoLivro{
             exit;
         }else{
             echo "<script>alert('Banco não encontradao')</script>";
-            header("Location: ../cadastrolivro.php");
-            #echo "<META HTTP-EQUIV='REFRESH' CONTENT=\0";
-            #URL='../cadastrolivro.PHP'\">";
+            #header("Location: ../cadastrolivro.php");
+            echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
+            URL='../cadastrolivro.PHP'\">";
         }
 
         }
 
-        //método para os dados de livro id 
+        //método para pesquisar? os dados de livro id 
         public function pesquisarLivroIdDAO($id){
             $conn = new Conecta();
             $conecta = $conn->conectadb();
             $livro = new Livro();
             if($conecta){
-                $sql = "delete from livro where id = '$id'";
+                $sql = "select * from livro where id = '$id'";
                 $result = mysqli_query($conecta,  $sql);
                 $linha = mysqli_fetch_assoc($result);
                 
@@ -109,7 +109,9 @@ class DaoLivro{
                 echo "<script>alert('Banco não encontradao')</script>";
                 #header("Location: ../cadastrolivro.php");
                 echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
-                URL='https://localhost/ProAcademia/cadastroLivro.php\">";
+                URL='../cadastrolivro.PHP'\">";
+                #echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
+                #URL='https://localhost/ProAcademia/cadastroLivro.php\">";
 
                 
             }

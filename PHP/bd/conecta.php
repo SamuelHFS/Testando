@@ -6,7 +6,7 @@ class Conecta{
 #bd do cadstro pessoal
     private $url = "localhost:3306";
     private  $user = "root";
-    private  $password = "senac"; #mudarSenha12345
+    private  $password = "12345"; #mudarSenha12345
     private  $base = "produto1"; #mudarParaPRODUTO1
 
     

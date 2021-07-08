@@ -3,6 +3,7 @@ include_once 'LivroController.php';
 
 $id = $_REQUEST['id'];
 $lc = new LivroController();
-$lc->pesquisarLivroIdDAO($id);
+$lc->pesquisarLivroId($id);
 
 header("Location: ../cadastrolivro.php");
+exit;
