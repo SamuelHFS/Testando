@@ -1,10 +1,10 @@
 <?php
 
-include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
-include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
 
-#include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
-#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 
@@ -63,7 +63,60 @@ class DaoLivro{
             return $lista;
         }
     }
-}
+    //médtodo para excluir livro na tablea livro
+
+    public function excluirLivroDAO($id){
+        $conn = new Conecta();
+        $conecta = $conn->conectadb();
+        if($conecta){
+            $sql = "delete from livro where id = '$id'";
+            mysqli_query($conecta, $sql);
+            header("Location: ../cadastrolivro.php");
+            mysqli_close($conecta);
+            exit;
+        }else{
+            echo "<script>alert('Banco não encontradao')</script>";
+            header("Location: ../cadastrolivro.php");
+            #echo "<META HTTP-EQUIV='REFRESH' CONTENT=\0";
+            #URL='../cadastrolivro.PHP'\">";
+        }
+
+        }
+
+        //método para os dados de livro id 
+        public function pesquisarLivroIdDAO($id){
+            $conn = new Conecta();
+            $conecta = $conn->conectadb();
+            $livro = new Livro();
+            if($conecta){
+                $sql = "delete from livro where id = '$id'";
+                $result = mysqli_query($conecta,  $sql);
+                $linha = mysqli_fetch_assoc($result);
+                
+                if($linha){
+                    do{
+                        $livro->setId($linha['id']);
+                        $livro->setTitulo($linha['titulo']);
+                        $livro->setAutor($linha['autor']);
+                        $livro->setEditora($linha['editora']);
+                        $livro->setQtdEstoque($linha['estoque']);
+
+                    }while ($linha = mysqli_fetch_assoc($result));
+                }
+                mysqli_close($conecta);
+                
+            }else{
+                echo "<script>alert('Banco não encontradao')</script>";
+                #header("Location: ../cadastrolivro.php");
+                echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
+                URL='https://localhost/ProAcademia/cadastroLivro.php\">";
+
+                
+            }
+                return $livro;
+            }
+    }
+
 
 
   

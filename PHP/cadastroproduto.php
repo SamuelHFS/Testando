@@ -1,5 +1,6 @@
 <?php
- include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/ProdutoController.php';
+ #include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/ProdutoController.php'; #casa
+ include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/ProdutoController.php';
  ?>
 
 

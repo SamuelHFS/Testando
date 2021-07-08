@@ -1,6 +1,6 @@
 <?php
-#include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
-include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php'; #casa
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +93,7 @@ include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php';
                             <div class="col-md-6 offset-md-3">
                                 <label>Código: </label> <br>
                                 <label>Título: </label>
-                                <input class="form-control" type="text" name="titulo">
+                                <input class="form-control" type="text" name="titulo" value="<?php echo $li->getId(); ?>">
                                 <label>Autor</label>
                                 <input class="form-control" type="text" name="autor">
                                 <label>Editora</label>
@@ -104,55 +104,77 @@ include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php';
                                 <!--Mudar o NAME do BOTÃO-->
                                 <input type="submit" name="cadastrarLivro" class="btn btn-success btInput" value="Enviar">
                                 &nbsp;&nbsp;
-                                <input type="reset" class="btn btn-danger btInput" value="Limpar">
+                                <input type="submit" class="btn btn-danger btInput" value="Limpar">
 
 
                             </div>
                             <div class="container-fluid ">
-    <div class="row">
-        <div class="col-md-12 offset-md-12">
-            <table class="table">
-                <thead class="thead-light bg-dark text-white">
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Autor</th>
-                        <th scope="col">Editora</th>
-                        <th scope="col">Estoque</th>
-                        <th scope="col-md-6">Ações</th>
-                    </tr>
+                            <div class="row" style="margin-top: 30px;">
+            <table class="table table-striped table-responsive">
+                <thead class="table-dark">
+                    <tr><th>Código</th>
+                        <th>titulo</th>
+                        <th>autor</th>
+                        <th>editora</th>
+                        <th>Quantidade estoque</th>
+                        <th>Ações</th>
+                        </tr>
                 </thead>
                 <tbody>
                     <?php
                     $pcTable = new LivroController();
                     $listaLivros = $pcTable->listarLivros();
                     $a = 0;
-                    if ($listaLivros!= null) {
-                    foreach ($listaLivros as $li) {
-                        $a++;
-                    ?>
-                        <tr>
-                            <td><?php print_r($li->getId()); ?></td>
-                            <td><?php print_r($li->getTitulo()); ?></td>
-                            <td><?php print_r($li->getAutor()); ?></td>
-                            <td><?php print_r($li->getEditora()); ?></td>
-                            <td><?php print_r($li->getQtdEstoque()); ?></td>
-                            <td><a class="btn btn-outline-dark" href="#">Editar</a>
-                                <a class="btn btn-outline-danger" href="#">Excluir</a>
-                            </td>
-                        </tr>
-
-                    <?php
+                    if ($listaLivros != null) {
+                        foreach ($listaLivros as $li) {
+                            $a++;
+                            ?>
+                            <tr>
+                                <td><?php print_r($li->getId()); ?></td>
+                                <td><?php print_r($li->getTitulo()); ?></td>
+                                <td><?php print_r($li->getAutor()); ?></td>
+                                <td><?php print_r($li->getEditora()); ?></td>
+                                <td><?php print_r($li->getQtdEstoque()); ?></td>
+                                
+                                <td><a class="btn btn-light" 
+                                       href="controller/editaLivro.php?id=<?php echo $li->getId(); ?>">
+                                        Excluir</a>
+                                    <button type="button" 
+                                            class="btn btn-light" data-bs-toggle="modal" 
+                                            data-bs-target="#exampleModal<?php echo $a;?>">
+                                        Deletar</button></td>
+                            </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal<?php echo $a;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <form method="get" action="controller/excluiLivro.php">
+                                <label><strong>Deseja Excluir o livro
+                                <?php echo $li->getTitulo(); ?>?</strong></label>
+                                    <input type="hidden" name="ide" value="<?php echo $li->getId(); ?>">
+                               
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Sim</button>
+                                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                                </div> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                        <?php
                     }
                 }
-
-                    ?>
-
-
+                ?>
                 </tbody>
             </table>
-
-        </div>
+        </div>     
     </div>
                     </form>
                 </div>

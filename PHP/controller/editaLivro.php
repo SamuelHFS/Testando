@@ -1,0 +1,8 @@
+<?php
+include_once 'LivroController.php';
+
+$id = $_REQUEST['id'];
+$lc = new LivroController();
+$lc->pesquisarLivroIdDAO($id);
+
+header("Location: ../cadastrolivro.php");

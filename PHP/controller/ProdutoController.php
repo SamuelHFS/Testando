@@ -1,8 +1,8 @@
 <?php
-include_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daoproduto.php'; #casa
-include_once 'C:/xampp/htdocs/PAcademia/PHP/model/produto.php'; #casa
-#include_once  'C:/xampp/htdocs/ProAcademia/PHP/dao/daoproduto.php'; 
-#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Produto.php';
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daoproduto.php'; #casa
+#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/produto.php'; #casa
+include_once  'C:/xampp/htdocs/ProAcademia/PHP/dao/daoproduto.php'; 
+include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/Produto.php';
 
 class ProdutoController {
     
