@@ -243,7 +243,7 @@ $btExcluir = FALSE;
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modalvideo">
-					<iframe id="testeyoutube" style="margin-left: -10px; " width="1200" height="490" http-equiv="refresh" content="2"
+					<iframe id="testeyoutube" style="margin-left: -10px; " width="120+0" height="490" http-equiv="refresh" content="2"
 						src="https://www.youtube.com/embed/zy2Fi42tPfw" title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen>
