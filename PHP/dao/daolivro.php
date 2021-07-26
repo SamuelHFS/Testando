@@ -1,10 +1,10 @@
 <?php
 
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/bd/conectalivro.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php';  #casa
 
-include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+#include_once  'C:/xampp/htdocs/ProAcademia/PHP/bd/conectalivro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 
@@ -109,7 +109,8 @@ class DaoLivro
             echo "<script>alert('Banco não encontradao')</script>";
             #header("Location: ../cadastrolivro.php");
             echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
-            URL='../cadastrolivro.PHP'\">";
+            URL='http://localhost/PAcademia/PHP/cadastrolivro.php'\">";
+            
         }
     }
 
