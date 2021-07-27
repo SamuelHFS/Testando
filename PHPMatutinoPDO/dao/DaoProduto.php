@@ -78,6 +78,7 @@ class DaoProduto {
     
     //método para carregar lista de produtos do banco de dados
     public function listarProdutosDAO(){
+        $msg = new Mensagem();
         $conn = new Conecta();
         $conecta = $conn->conectadb();
         if($conecta){
@@ -133,6 +134,7 @@ class DaoProduto {
     //método para os dados de produto por id
     public function pesquisarProdutoIdDAO($id){
         $conn = new Conecta();
+        $msg = new Mensagem();
         $conecta = $conn->conectadb();
         $produto = new Produto();
         if($conecta){

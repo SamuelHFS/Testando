@@ -52,10 +52,10 @@ class ProdutoController {
     }
     
     //método para editar produto
-    public function editarProduto($id){
-        $daoProduto = new DaoProduto();
-        return $daoProduto->editarProdutoDAO($id);
-    }
+    //public function editarProduto($id){
+        //$daoProduto = new DaoProduto();
+        //return $daoProduto->editarProdutoDAO($id);
+   // }
     
     //método para limpar formulário
     public function limpar(){
