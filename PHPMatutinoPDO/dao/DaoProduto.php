@@ -1,7 +1,7 @@
 <?php
-include_once 'C:/xampp/htdocs/PHPMatutinoPDO/bd/Conecta.php';
-include_once 'C:/xampp/htdocs/PHPMatutinoPDO/model/Produto.php';
-include_once 'C:/xampp/htdocs/PHPMatutinoPDO/model/Mensagem.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/bd/Conecta.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Produto.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Mensagem.php';
 
 class DaoProduto {
 
