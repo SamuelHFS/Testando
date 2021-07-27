@@ -4,27 +4,44 @@
 #include_once 'C:/xampp/htdocs/PHPMatutinoPDO/model/Mensagem.php';
 
 include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/bd/Conecta.php';
-include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Produto.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Fornecedor.php';
 include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Mensagem.php';
 
 class DaoProduto {
 
-    public function inserir(Produto $produto){
+    public function inserir(Fornecedor $fornecedor){
         $conn = new Conecta();
         $msg = new Mensagem();
         $conecta = $conn->conectadb();
         if($conecta){
-            $nomeProduto = $produto->getNomeProduto();
-            $vlrCompra = $produto->getVlrCompra();
-            $vlrVenda = $produto->getVlrVenda();
-            $qtdEstoque = $produto->getQtdEstoque();
+            
+            $nomeFornecedor = $fornecedor->getNomeFornecedor();
+            $logradouro = $fornecedor->getLogradouro();
+            $numero = $fornecedor->getNumero();
+            $complemento = $fornecedor->getComplemento();
+            $bairro = $fornecedor->getBairro();
+            $cidade = $fornecedor->getCidade();
+            $uf = $fornecedor->getUf();
+            $cep = $fornecedor->getCep();
+            $representante = $fornecedor->getRepresentante();
+            $email = $fornecedor->getEmail();
+            $telFixo = $fornecedor->getTelFixo();
+            $telCel= $fornecedor->getTelCel();
             try {
                 $stmt = $conecta->prepare("insert into produto values "
-                        . "(null,?,?,?,?)");
-                $stmt->bindParam(1, $nomeProduto);
-                $stmt->bindParam(2, $vlrCompra);
-                $stmt->bindParam(3, $vlrVenda);
-                $stmt->bindParam(4, $qtdEstoque);
+                        . "(null,?,?,?,?,?,?,?,?,?,?,?,?)");
+                $stmt->bindParam(1, $nomeFornecedor);
+                $stmt->bindParam(2, $logradouro);
+                $stmt->bindParam(3, $numero);
+                $stmt->bindParam(4, $complemento);
+                $stmt->bindParam(5, $bairro);
+                $stmt->bindParam(6, $cidade);
+                $stmt->bindParam(7, $uf);
+                $stmt->bindParam(8, $cep);
+                $stmt->bindParam(9, $representante);
+                $stmt->bindParam(10, $email);
+                $stmt->bindParam(11, $telFixo);
+                $stmt->bindParam(12, $telCel);
                 $stmt->execute();
                 $msg->setMsg("<p style='color: green;'>"
                         . "Dados Cadastrados com sucesso</p>");
@@ -39,17 +56,17 @@ class DaoProduto {
         return $msg;
     }
     
-    //método para atualizar dados da tabela produto
-    public function atualizarProdutoDAO(Produto $produto){
+    //método para atualizar dados da tabela fornecedor
+    public function atualizarFornecedorDAO(Produto $fornecedor){
         $conn = new Conecta();
         $msg = new Mensagem();
         $conecta = $conn->conectadb();
         if($conecta){
-            $id = $produto->getIdProduto();
-            $nomeProduto = $produto->getNomeProduto();
-            $vlrCompra = $produto->getVlrCompra();
-            $vlrVenda = $produto->getVlrVenda();
-            $qtdEstoque = $produto->getQtdEstoque();
+            $id = $fornecedor->getIdProduto();
+            $nomeProduto = $fornecedor->getNomeProduto();
+            $vlrCompra = $fornecedor->getVlrCompra();
+            $vlrVenda = $fornecedor->getVlrVenda();
+            $qtdEstoque = $fornecedor->getQtdEstoque();
             try{
                 $stmt = $conecta->prepare("update produto set "
                         . "nome = ?,"
@@ -88,13 +105,13 @@ class DaoProduto {
                 if($rs->execute()){
                     if($rs->rowCount() > 0){
                         while($linha = $rs->fetch(PDO::FETCH_OBJ)){
-                            $produto = new Produto();
-                            $produto->setIdProduto($linha->id);
-                            $produto->setNomeProduto($linha->nome);
-                            $produto->setVlrCompra($linha->vlrCompra);
-                            $produto->setVlrVenda($linha->vlrVenda);
-                            $produto->setQtdEstoque($linha->qtdEstoque);
-                            $lista[$a] = $produto;
+                            $fornecedor = new Produto();
+                            $fornecedor->setIdProduto($linha->id);
+                            $fornecedor->setNomeProduto($linha->nome);
+                            $fornecedor->setVlrCompra($linha->vlrCompra);
+                            $fornecedor->setVlrVenda($linha->vlrVenda);
+                            $fornecedor->setQtdEstoque($linha->qtdEstoque);
+                            $lista[$a] = $fornecedor;
                             $a++;
                         }
                     }
@@ -134,7 +151,7 @@ class DaoProduto {
     public function pesquisarProdutoIdDAO($id){
         $conn = new Conecta();
         $conecta = $conn->conectadb();
-        $produto = new Produto();
+        $fornecedor = new Produto();
         if($conecta){
             try {
                 $rs = $conecta->prepare("select * from produto where "
@@ -143,11 +160,11 @@ class DaoProduto {
                 if($rs->execute()){
                     if($rs->rowCount() > 0){
                         while($linha = $rs->fetch(PDO::FETCH_OBJ)){
-                            $produto->setIdProduto($linha->id);
-                            $produto->setNomeProduto($linha->nome);
-                            $produto->setVlrCompra($linha->vlrCompra);
-                            $produto->setVlrVenda($linha->vlrVenda);
-                            $produto->setQtdEstoque($linha->qtdEstoque);
+                            $fornecedor->setIdProduto($linha->id);
+                            $fornecedor->setNomeProduto($linha->nome);
+                            $fornecedor->setVlrCompra($linha->vlrCompra);
+                            $fornecedor->setVlrVenda($linha->vlrVenda);
+                            $fornecedor->setQtdEstoque($linha->qtdEstoque);
                         }
                     }
                 }
@@ -160,6 +177,6 @@ class DaoProduto {
             echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
 			 URL='../PHPMatutino01/cadastroProduto.php'\">"; 
         }
-        return $produto;
+        return $fornecedor;
     }
 }
