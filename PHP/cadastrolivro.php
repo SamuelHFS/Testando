@@ -1,8 +1,8 @@
 <?php
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php'; #casa
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/controller/LivroController.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHP/controller/LivroController.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
 $pr = new Livro();
 $btEnviar = FALSE;
 $btAtualizar = FALSE;
@@ -242,6 +242,13 @@ $btExcluir = FALSE;
                                                                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
+                                                                <div class="modalvideo">
+					<iframe id="testeyoutube" style="margin-left: -10px; " width="120+0" height="490" http-equiv="refresh" content="2"
+						src="https://www.youtube.com/embed/zy2Fi42tPfw" title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+					</iframe>
+				</div>
                                                                 <div class="modal-body">
                                                                     <form method="get" action="controller/excluiLivro.php">
                                                                         <label><strong>Deseja Excluir o livro

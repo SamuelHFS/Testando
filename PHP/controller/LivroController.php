@@ -1,8 +1,8 @@
 <?php
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daolivro.php'; #casa
-#include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
-include_once  'C:/xampp/htdocs/ProAcademia/PHP/dao/daolivro.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHP/dao/daolivro.php'; #casa
+include_once 'C:/xampp/htdocs/PAcademia/PHP/model/livro.php'; #casa
+#include_once  'C:/xampp/htdocs/ProAcademia/PHP/dao/daolivro.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHP/model/livro.php';
 
 
 class LivroController{
