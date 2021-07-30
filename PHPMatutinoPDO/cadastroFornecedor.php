@@ -291,7 +291,7 @@ $btExcluir = FALSE;
 
                                 <th scope="col">Nome</th>
                                 <th scope="col">Log</th>
-                                <th scope="col">Num</th>
+                                
                                 <th scope="col">Compl</th>
                                 <th scope="col">bairro</th>
                                 <th scope="col">Cid</th>

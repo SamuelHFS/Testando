@@ -1,17 +1,18 @@
 <?php
 
-include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/bd/Conecta.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Produto.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Mensagem.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Fornecedor.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/bd/Conecta.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Produto.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Mensagem.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Fornecedor.php';
 
 #include_once 'C:/xampp/htdocs/PHPMatutinoPDO/bd/Conecta.php';
 #include_once 'C:/xampp/htdocs/PHPMatutinoPDO/model/Produto.php';
 #include_once 'C:/xampp/htdocs/PHPMatutinoPDO/model/Mensagem.php';
 
-#include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/bd/Conecta.php';
-#include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Produto.php';
-#include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Mensagem.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/bd/Conecta.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Produto.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Mensagem.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Fornecedor.php';
 
 
 class DaoProduto
