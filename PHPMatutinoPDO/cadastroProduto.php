@@ -1,10 +1,15 @@
 <?php
 include_once 'controller/ProdutoController.php';
 
+include_once './model/Fornecedor.php';
 include_once './model/Produto.php';
 include_once './model/Mensagem.php';
+include_once 'controller/FornecedorController.php';
 $msg = new Mensagem();
 $pr = new Produto();
+$fcc = new FornecedorController();
+$fornecedor = new Fornecedor();
+$pr->setFornecedor($fornecedor);
 $btEnviar = FALSE;
 $btAtualizar = FALSE;
 $btExcluir = FALSE;
@@ -172,25 +177,36 @@ $btExcluir = FALSE;
                                     <input class="form-control" type="number" 
                                            value="<?php echo $pr->getQtdEstoque(); ?>" name="qtdEstoque">
                                            <label>Fornecedor</label>  
-                                    <select name="idFornecedor" class="form-control">
-                                        <option>[--Selecione--]</option>
+                                    <select name="idFornecedor" class="form-select">
+                                        <option hidden>Selecione</option>
+
                                         <?php
-                                          include_once 'controller/FornecedorController.php';
-                                          $fcc = new FornecedorController();
                                           $listaFornecedores = $fcc->listarFornecedores();
                                           if($listaFornecedores != null){
                                               foreach ($listaFornecedores as $lf){
                                                   ?>
-                                            <option value="<?php echo $lf->getIdfornecedor(); ?>">
-                                                    <?php echo $lf->getNomeFornecedor();?></option>
+                                            <option value="<?php echo $lf->getidFornecedor(); ?>"
+                                                    
                                         <?php
+                                        $fk = $pr->getFornecedor()->getidFornecedor();
+                                        if($pr->getFornecedor()->getidFornecedor() != ""){
+                                            if($lf->getidFornecedor() ==
+                                            $pr->getFornecedor()->getIdfornecedor()){
+                                                echo "selected = 'selected'";
+                                            }
+                                        }
+                                        ?>
+                                        >
+                                            <?php echo $lf->getNomeFornecedor(); ?></option>
+                                            <?php
                                               }
                                           }
                                         ?>
+
+
                                        
-                                    </select>
-
-
+                                    
+                                   </select>
                                     <input type="submit" name="cadastrarProduto"
                                            class="btn btn-success btInput" value="Enviar"
                                            <?php if($btEnviar == TRUE) echo "disabled"; ?>>

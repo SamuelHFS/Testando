@@ -100,7 +100,7 @@ class DaoProduto
         if ($conecta) {
             try {
                 $rs = $conecta->query("SELECT * FROM produto inner join fornecedor "
-                    . "on produto.FKfornecedor = fornecedor.idFornecedor");
+                    . "on produto.FKfornecedor = fornecedor.idFornecedor " . "order by produto.id desc");
                 $lista = array();
                 $a = 0;
                 if ($rs->execute()) {
