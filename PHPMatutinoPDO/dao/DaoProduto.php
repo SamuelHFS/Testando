@@ -100,7 +100,7 @@ class DaoProduto
         if ($conecta) {
             try {
                 $rs = $conecta->query("SELECT * FROM produto inner join fornecedor "
-                    . "on produto.FKfornecedor = fornecedor.idFornecedor " . "order by produto.id desc");
+                    . "on produto.FKfornecedor = fornecedor.idFornecedor order by produto.id asc " );
                 $lista = array();
                 $a = 0;
                 if ($rs->execute()) {
@@ -117,7 +117,7 @@ class DaoProduto
                             $form->setIdfornecedor($linha->idFornecedor);
                             $form->setNomeFornecedor($linha->nomeFornecedor);
                             $form->setLogradouro($linha->logradouro);
-                            $form->setNumero($linha->numero);
+                        
                             $form->setComplemento($linha->complemento);
                             $form->setBairro($linha->bairro);
                             $form->setCidade($linha->cidade);
@@ -175,8 +175,8 @@ class DaoProduto
         $produto = new Produto();
         if ($conecta) {
             try {
-                $rs = $conecta->prepare("select * from produto where "
-                    . "id = ?");
+                $rs = $conecta->prepare("select * from produto inner join fornecedor on produto.FKfornecedor = fornecedor.idFornecedor where produto.id = ?"
+                    );
                 $rs->bindParam(1, $id);
                 if ($rs->execute()) {
                     if ($rs->rowCount() > 0) {
@@ -186,6 +186,22 @@ class DaoProduto
                             $produto->setVlrCompra($linha->vlrCompra);
                             $produto->setVlrVenda($linha->vlrVenda);
                             $produto->setQtdEstoque($linha->qtdEstoque);
+
+                            $form = new Fornecedor();
+                            $form->setIdfornecedor($linha->idFornecedor);
+                            $form->setNomeFornecedor($linha->nomeFornecedor);
+                            $form->setLogradouro($linha->logradouro);
+                           
+                            $form->setComplemento($linha->complemento);
+                            $form->setBairro($linha->bairro);
+                            $form->setCidade($linha->cidade);
+                            $form->setUf($linha->uf);
+                            $form->setCep($linha->cep);
+                            $form->setRepresentante($linha->representante);
+                            $form->setEmail($linha->email);
+                            $form->setTelFixo($linha->telFixo);
+                            $form->setTelCel($linha->telCel);
+                            $produto->setFornecedor($form);
                         }
                     }
                 }

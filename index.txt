@@ -1,3 +1,28 @@
+
+
+
+https://www.vivaolinux.com.br/script/Mascara-JavaScript-para-Campos-de-Telefone-Celular-e-CEP
+
+
+
+
+
+https://codepen.io/pen/
+
+https://codepen.io/pen/
+
+https://sweetalert2.github.io/#download
+
+https://viacep.com.br/exemplo/jquery/
+
+
+
+
+
+
+
+
+
 <div class="carousel-inner" >
                   <div class="carousel-item active" data-bs-interval="2000" >
                     <img src="img/acade.jpg" class="d-block w-100" alt="Treino de Peito"  >
