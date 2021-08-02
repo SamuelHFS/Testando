@@ -233,7 +233,7 @@ $btExcluir = FALSE;
                             <label>UF</label>
                             <input class="form-control" type="text" id="uf" value="<?php echo $fo->getUf(); ?>" name="uf" maxlength="2">
 
-                            <label>CEP</label><label id="cepErro" style="color: red;" ></label>
+                            <label>CEP</label><label id="cepErro" style="color: red;"></label>
                             <input class="form-control" type="text" id="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" value="<?php echo $fo->getCep(); ?>" name="cep">
 
                             <label>Representante</label>
@@ -291,7 +291,7 @@ $btExcluir = FALSE;
 
                                 <th scope="col">Nome</th>
                                 <th scope="col">Log</th>
-                                
+
                                 <th scope="col">Compl</th>
                                 <th scope="col">bairro</th>
                                 <th scope="col">Cid</th>

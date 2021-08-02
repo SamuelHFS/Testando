@@ -17,6 +17,15 @@ https://viacep.com.br/exemplo/jquery/
 
 
 
+https://code.jquery.com/jquery-3.6.0.min.js
+
+https://code.jquery.com/jquery-3.6.0.js
+
+https://viacep.com.br/exemplo/jquery/
+
+
+Máscaras
+https://www.vivaolinux.com.br/script/Mascara-JavaScript-para-Campos-de-Telefone-Celular-e-CEP
 
 
 
