@@ -1,13 +1,11 @@
 <?php
 
-include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/dao/DaoProduto.php';
-include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Produto.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/dao/DaoProduto.php';
+#include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Produto.php';
 
-#include_once 'C:/xampp/htdocs/PHPMatutinoPDO/dao/DaoProduto.php';
-#include_once 'C:/xampp/htdocs/PHPMatutinoPDO/model/Produto.php';
-#
-#include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/dao/DaoProduto.php';
-#include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Produto.php';
+
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/dao/DaoProduto.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Produto.php';
 
 
 class ProdutoController {

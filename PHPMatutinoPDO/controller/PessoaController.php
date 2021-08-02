@@ -1,13 +1,15 @@
 <?php
 include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/dao/daoPessoa.php';
 include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Pessoa.php';
+include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Endereco.php';
 
 #include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/dao/DaoFornecedor.php';
 #include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Fornecedor.php';
 
 class PessoaController {
     
-    public function inserirProduto($nome, $dtNasc, $login, $senha, $perfil, $email, $cpf, $fkEndereco){
+    public function inserirProduto($nome, $dtNasc, $login, $senha, $perfil, $email, $cpf, $fkEndereco, $cep, $logradouro,
+    $complemento, $bairro, $cidade, $uf){
         $pessoa = new Pessoa();
         $pessoa->setNome($nome);
         $pessoa->setDtNasc($dtNasc);
@@ -17,9 +19,17 @@ class PessoaController {
         $pessoa->setEmail($email);
         $pessoa->setCpf($cpf);
         $pessoa->setFkEndereco($fkEndereco);
-        
+
+        $endereco = new Endereco();
+        $endereco->setCep($cep);
+        $endereco->setLogradouro($logradouro);
+        $endereco->setComplemento($complemento);
+        $endereco->setBairro($bairro);
+        $endereco->setCidade($cidade);
+        $endereco->setUf($uf);
+
         $daoPessoa = new DaoPessoa();
-        return $daoPessoa->inserir($pessoa);
+        return $daoPessoa->inserir($pessoa,$endereco);
     }
     
     //método para atualizar dados de produto no BD

@@ -1,3 +1,10 @@
+<?php
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/controller/PessoaController.php';
+include_once 'C:/xampp/htdocs/PAcademia/PHPMatutinoPDO/model/Pessoa.php';
+$pe = new Pessoa();
+$btEnviar = FALSE;
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -52,13 +59,14 @@
         <div class="row" style="margin-top: 30px;">
             <div class="col-8 offset-2">
 
-                <div class="card-header bg-light text-center border" style="padding-bottom: 15px; padding-top: 15px;">
+                <div class="card-header bg-dark text-center text-white border" style="padding-bottom: 15px; padding-top: 15px;">
                     Cadastro de Cliente
                 </div>
                 <?php
                 //envio dos dados para o BD
                 if (isset($_POST['cadastrar'])) {
-                    include_once 'controller/PessoaController.php';
+                    $nome = trim($_POST['nome']);
+                    if ($nome != ""){
                     $nome = $_POST['nome'];
                     $dtNasc = $_POST['dtNasc'];
                     $login = $_POST['login'];
@@ -66,18 +74,35 @@
                     $perfil = $_POST['perfil'];
                     $cpf = $_POST['cpf'];
                     $email = $_POST['email'];
+                    $cep = $_POST['cep'];
+                    $logradouro = $_POST['logradouro'];
+                    $complemento = $_POST['complemento'];
+                    $bairro = $_POST['bairro'];
+                    $cidade = $_POST['cidade'];
+                    $uf = $_POST['uf'];
 
                     $pc = new PessoaController();
-                    echo "<p>" . $pc->inserirPessoa(
+                    unset($_POST['cadastrar']);
+                    $msg = $pc->inserirPessoa(
                         $nome,
                         $dtNasc,
                         $login,
                         $senha,
                         $perfil,
                         $email,
-                        $cpf
-                    ) . "</p>";
+                        $cpf, 
+                        $cep, 
+                        $logradouro , 
+                        $complemento , 
+                        $bairro, 
+                        $cidade, 
+                        $uf
+                    );
+                    echo $msg->getMsg();
+                            echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"2;
+                                URL='cadastro.php'\">";
                 }
+            }
                 ?>
                 <div class="card-body border">
                     <form method="post" action="">
@@ -113,7 +138,7 @@
                         </div>
                         <hr class="featurette-divider ">
                         <div class="card-header bg-light text-center border" style="padding-bottom: 15px; padding-top: 15px;">
-                            Cadastro de Cliente
+                            Preencha seu endereço
                         </div>
 
                         <div class="card-body ">
@@ -123,37 +148,23 @@
                                         <label>Código2: </label> <br>
                                         <label>CEP</label>
                                         <input class="form-control" type="text" name="cep">
-                                        <label>Data de Nascimento</label>
-                                        <input class="form-control" type="date" name="dtNasc">
-                                        <label>E-Mail</label>
-                                        <input class="form-control" type="email" name="email">
-                                        <label>CPF</label>
-                                        <input class="form-control" type="text" name="cpf">
+                                        <label>Logradouro</label>
+                                        <input class="form-control" type="text" name="logradouro">
+                                        <label>Complemento</label>
+                                        <input class="form-control" type="email" name="complemento">
                                     </div>
 
                                     <div class="col-md-6"><br>
 
-
-                                        <label>Login</label>
-                                        <input class="form-control" type="text" name="login">
-                                        <label>Senha</label>
-                                        <input class="form-control" type="password" name="senha">
-                                        <label>Conf. Senha</label>
-                                        <input class="form-control" type="password" name="senha2">
-                                        <label>Perfil</label>
-                                        <select name="perfil" class="form-select">
-                                            <option hidden>Selecione</option>
-                                            <option>Cliente</option>
-                                            <option>Funcionário</option>
-                                        </select>
+                                        <label>Bairro</label>
+                                        <input class="form-control" type="text" name="bairro">
+                                        <label>Cidade</label>
+                                        <input class="form-control" type="text" name="cidade">
+                                        <label>UF</label>
+                                        <input class="form-control" type="password" name="uf">
+                                        
                                     </div>
                                 </div>
-
-
-
-
-
-
                                 <div class="col-6 offset-4">
                                     <input type="submit" name="cadastrar" class="btn btn-success btInput" value="Enviar">
                                     &nbsp;&nbsp;

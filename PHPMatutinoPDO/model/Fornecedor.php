@@ -5,7 +5,6 @@ class Fornecedor {
     private $idFornecedor;
     private $nomeFornecedor;
     private $logradouro;
-    
     private $complemento;
     private $bairro;
     private $cidade;

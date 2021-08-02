@@ -18,12 +18,13 @@ include_once 'C:/xampp/htdocs/ProAcademia/PHPMatutinoPDO/model/Endereco.php';
 class DaoPessoa
 {
 
-    public function inserir(Pessoa $pessoa)
+    public function inserir(Pessoa $pessoa, Endereco $endereco)
     {
         $conn = new Conecta();
         $msg = new Mensagem();
         $conecta = $conn->conectadb();
         if ($conecta) {
+
             $nome = $pessoa->getNome();
             $dtNasc = $pessoa->getDtNasc();
             $login = $pessoa->getLogin();
@@ -32,6 +33,14 @@ class DaoPessoa
             $email = $pessoa->getEmail();
             $cpf = $pessoa->getCpf();
             $fkEndereco = $pessoa->getFkEndereco();
+
+            $cep = $endereco->getCep();
+            $logradouro = $endereco->getLogradouro();
+            $complemento = $endereco->getComplemento();
+            $bairro = $endereco->getBairro();
+            $cidade = $endereco->getCidade();
+            $uf = $endereco->getUf();
+
             try {
                 $stmt = $conecta->prepare("insert into pessoa values "
                     . "(null,?,?,?,?,?,?,?,?)");
@@ -44,6 +53,18 @@ class DaoPessoa
                 $stmt->bindParam(7, $cpf);
                 $stmt->bindParam(8, $fkEndereco);
                 $stmt->execute();
+
+                $stmt = $conecta->prepare("insert into endereco values "
+                . "(null,?,?,?,?,?,?)");
+
+                $stmt->bindParam(1, $cep);
+                $stmt->bindParam(2, $logradouro);
+                $stmt->bindParam(3, $complemento);
+                $stmt->bindParam(4, $bairro);
+                $stmt->bindParam(5, $cidade);
+                $stmt->bindParam(6, $uf);
+                $stmt->execute();
+
                 $msg->setMsg("<p style='color: green;'>"
                     . "Dados Cadastrados com sucesso</p>");
             } catch (Exception $ex) {
