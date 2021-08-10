@@ -60,7 +60,7 @@ $btEnviar = FALSE;
             <div class="col-8 offset-2">
 
                 <div class="card-header bg-dark text-center text-white border" style="padding-bottom: 15px; padding-top: 15px;">
-                    Cadastro de Cliente
+                    Cadastro de Teste
                 </div>
                 <?php
                 //envio dos dados para o BD
